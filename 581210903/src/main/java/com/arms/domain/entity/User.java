@@ -10,12 +10,14 @@ import java.util.List;
 public class User {
 
 	private int id;
-	private String name;
-	private String email;
+	private String nickname;
+	private String username;
 	private String password;
 	private Date created;
 	private Date updated;
 	private String avartar;
+	
+	private List<UsersInv> userInvList;
 
 	@Id
 	@GeneratedValue
@@ -29,9 +31,9 @@ public class User {
 	}
 
 	@Basic
-	@Column(name = "name")
-	public String getName() {
-		return name;
+	@Column(name = "nickname")
+	public String getNickname() {
+		return nickname;
 	}
 	
 	@Basic
@@ -45,18 +47,18 @@ public class User {
 		this.avartar=avatar ;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	@Basic
-	@Column(name = "email")
-	public String getEmail() {
-		return email;
+	@Column(name = "username")
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Basic
@@ -89,5 +91,15 @@ public class User {
 		this.updated = updated;
 	}
 	 
+	// Relation
+	
+	@OneToMany(mappedBy="user", cascade = CascadeType.ALL)
+	public List<UsersInv> getuserInvList() {
+		return userInvList;
+	}
+
+	public void setUserInvList(List<UsersInv> userInvList) {
+		this.userInvList = userInvList;
+	}
 
 }

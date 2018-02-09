@@ -18,14 +18,14 @@ public class AuthenticationService implements UserDetailsService {
 	private UserRepository userRepository;
 
 	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		User user = userRepository.findOneByEmail(email);
-		GrantedAuthority authority = new SimpleGrantedAuthority("emitter");
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		User user = userRepository.findOneByUsername(username);
+		GrantedAuthority authority = new SimpleGrantedAuthority("Salt");
 		boolean isEnabled = true;
 		boolean isAccountNonExpired = true;
 		boolean isCredentialsNonExpired = true;
 		boolean isAccountNonLocked = true;
-		UserDetails userDetails = (UserDetails) new org.springframework.security.core.userdetails.User(user.getEmail(),
+		UserDetails userDetails = (UserDetails) new org.springframework.security.core.userdetails.User(user.getUsername(),
 
 				user.getPassword(), isEnabled, isAccountNonExpired, isCredentialsNonExpired,
 

@@ -23,8 +23,8 @@ public class UserService extends AppService {
 	public void createUser(UserAddForm userAddForm) throws NoSuchAlgorithmException {
 	Date nowDate = Calendar.getInstance().getTime();
 	User user = new User();
-	user.setName(userAddForm.getName());
-	user.setEmail(userAddForm.getEmail());
+	user.setNickname(userAddForm.getName());
+	user.setUsername(userAddForm.getEmail());
 	user.setPassword(passwordEncoder.hashMD5(userAddForm.getPassword()));
 	user.setCreated(nowDate);
 	user.setUpdated(nowDate);
@@ -41,14 +41,14 @@ public class UserService extends AppService {
 		User user = userRepository.findOne(userId);
 		UserEditForm userEditForm = new UserEditForm();
 		userEditForm.setUserId(user.getId());
-		userEditForm.setName(user.getName());
-		userEditForm.setEmail(user.getEmail());
+		userEditForm.setName(user.getNickname());
+		userEditForm.setEmail(user.getUsername());
 		return userEditForm;
 		}
 	public void updateUser(UserEditForm userEditForm) throws NoSuchAlgorithmException {
 		Date nowDate = Calendar.getInstance().getTime();
 		User user = userRepository.findOne(userEditForm.getUserId());
-		user.setName(userEditForm.getName());
+		user.setNickname(userEditForm.getName());
 		user.setPassword(passwordEncoder.hashMD5(userEditForm.getPassword()));
 		user.setUpdated(nowDate);
 		userRepository.save(user);

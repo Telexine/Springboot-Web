@@ -6,5 +6,5 @@ import com.arms.domain.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	User findOneByEmail(String email);
+	User findOneByUsername(String Username);
 }

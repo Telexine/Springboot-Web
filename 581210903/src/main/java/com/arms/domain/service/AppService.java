@@ -23,7 +23,7 @@ public class AppService {
 		else {
 			Authentication auth = (Authentication) principal;
 			UserDetails userDetails = (UserDetails) auth.getPrincipal();
-			User user = userRepository.findOneByEmail(userDetails.getUsername());
+			User user = userRepository.findOneByUsername(userDetails.getUsername());
 			if (user == null)
 				return null;
 			else
@@ -37,7 +37,7 @@ public class AppService {
 		} else {
 			Authentication auth = (Authentication) principal;
 			UserDetails userDetails = (UserDetails) auth.getPrincipal();
-			return userRepository.findOneByEmail(userDetails.getUsername());
+			return userRepository.findOneByUsername(userDetails.getUsername());
 		}
 	}
 
