@@ -1,6 +1,97 @@
-html {
-  overflow-y: scroll; }
 
+
+.main-layout{
+
+  width: 100%;
+  height: 100%;
+}
+.content-grid{ 
+  width: 100%;
+  margin: 0 auto;
+  flex-shrink: 0;
+
+  padding: 0;
+  display: flex;
+}
+.card{
+  box-sizing: border-box;
+  z-index: 2;
+  border-radius: 3px;
+  margin:2px;
+  font-size: 1em;
+  border-top: 1px solid #d5d5d5;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  padding-top:30px;
+}
+.item-in-card{
+  margin: auto;
+  justify-content:center;
+}
+.nametag{
+  padding:20px;
+  text-align: center;
+}
+.avatar{
+  padding:20px;
+  
+}
+.clearfloat{
+  clear: both;
+}
+.desc{
+  padding: 30px
+}
+.counter{
+  color: #7EBEC5;
+  font-weight: 500;
+  line-height: 72px;
+  word-wrap: break-word;
+  font-size: 10em
+}
+.counter .desc{
+  font-size: 5em;
+  color: #686868 ;
+}
+/*
+ Responsive Column
+*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+/*
+ Responsive 
+*/
+
+html {
+  overflow-y: scroll;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 18px;
+  color: #686868 !important;
+  overflow: hidden;
+  line-height: 18px;
+ }
+ .card-image {
+  background-attachment: scroll;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpuRT9Z0F0_13Hc33cyu2rSAhkMHU0lNxa4In-EOxH35KwS5tR);
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  
+ 
+  background-attachment: scroll;
+  box-sizing: border-box;
+  background-size: cover;
+}
 body {
   padding-top: 60px; }
 
@@ -20,24 +111,6 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1; }
 
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center; }
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #999; }
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em; }
-
 /* header */
 #logo {
   float: left;
@@ -50,6 +123,7 @@ margin-right: 10px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1; }
+
 
 #logo:hover {
   color: #fff;
