@@ -5,7 +5,7 @@ spring:
   profiles: local
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/emitter2?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/salty?useUnicode=true&characterEncoding=UTF-8
     username: root 
     password: manager
   jpa:
@@ -23,7 +23,7 @@ spring:
   profiles: mickey
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.33.10:3306/emitter2?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.33.10:3306/salty?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: manager
   jpa:

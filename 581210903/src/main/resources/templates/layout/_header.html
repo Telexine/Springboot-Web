@@ -7,7 +7,45 @@
 </head>
 <body>
 	<header th:fragment="header">
-	   <!-- layout _header.html replaced into main.html -->
+
+
+			<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+					<header class="mdl-layout__header mdl-layout__header--transparent">
+					  <div class="mdl-layout__header-row">
+						<!-- Title -->
+						<span class="mdl-to alayout-title" style="font-size:2em">	 <span class=" glyphicon glyphicon-qrcode"></span> &nbsp;塩  &nbsp; &nbsp; S H I O </a></span>
+						<!-- Add spacer, lign navigation to the right -->
+						<div class="mdl-layout-spacer"></div>
+						<!-- Navigation -->
+						<nav class="mdl-navigation">
+						  <a class="mdl-navigation__link" href="">H O M E </a>
+						  <a class="mdl-navigation__link" href="">A B O U T </a>
+						  <a class="mdl-navigation__link" href="">C O N T A C T</a>
+	 
+						</nav>
+					  </div>
+					</header>
+					<div class="mdl-layout__drawer">
+					  <span class="mdl-layout-title">C 0 N T R 0 L L</span>
+					  <nav class="mdl-navigation">
+
+						<hr style="margin:auto"width="70%">
+						<br>
+						<span th:if="${isLogin}"><a class="mdl-navigation__link"  href="/user/login"> Sign in</a></span>
+						<span th:unless="${isLogin}"></span><a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-asterisk"></span> &nbsp Setting</a></span>
+						<span th:unless="${isLogin}"></span><a class="mdl-navigation__link" href="/user/logout" ><span class="glyphicon glyphicon-eject"></span> &nbsp Logout</a></span>
+					  </nav>
+					</div>
+					<main class="mdl-layout__content">
+					</main>
+				  </div>
+
+
+
+
+
+
+	   <!-- layout _header.html replaced into main.html 
 	   <nav class="navbar navbar-inverse navbar-fixed-top">
 	       <div class="container">
 	           <div class="navbar-header">

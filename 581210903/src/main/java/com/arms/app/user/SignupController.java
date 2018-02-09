@@ -24,13 +24,13 @@ public class SignupController {
 	@RequestMapping("/user/signUp")
 	public ModelAndView signup(ModelAndView modelAndView){
 		modelAndView.setViewName("user/signup");
-		modelAndView.addObject("userAddForm", new UserAddForm());
+		modelAndView.addObject("userAddForm", new UserDataForm());
 		return modelAndView;
 	}
 	
 	
 	@RequestMapping("/user/add")
-	public Object add(@ModelAttribute("userAddForm") @Valid UserAddForm userAddForm, BindingResult bindingResult,
+	public Object add(@ModelAttribute("userAddForm") @Valid UserDataForm userAddForm, BindingResult bindingResult,
 
 			RedirectAttributes attributes, ModelAndView modelAndView) throws
 

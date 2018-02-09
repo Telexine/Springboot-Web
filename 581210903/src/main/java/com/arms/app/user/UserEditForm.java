@@ -7,10 +7,10 @@ import javax.validation.constraints.NotNull;
 @Data
 public class UserEditForm {
 	@NotNull
-	private Integer userId;
+	private Integer userid;
 	@NotEmpty
-	private String name;
-	private String email;
+	private String nickname;
+	private String username;
 	@NotEmpty
 	private String password;
 }

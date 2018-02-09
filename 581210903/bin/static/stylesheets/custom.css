@@ -1,5 +1,6 @@
-
-
+body{
+  background-attachment: fixed
+}
 .main-layout{
 
   width: 100%;
@@ -17,7 +18,7 @@
   box-sizing: border-box;
   z-index: 2;
   border-radius: 3px;
-  margin:2px;
+  margin:5px;
   font-size: 1em;
   border-top: 1px solid #d5d5d5;
   background-color: white;
@@ -31,6 +32,7 @@
 .nametag{
   padding:20px;
   text-align: center;
+  color: #686868!important;
 }
 .avatar{
   padding:20px;
@@ -78,7 +80,7 @@ html {
   font-size: 1rem;
   line-height: 18px;
   color: #686868 !important;
-  overflow: hidden;
+ 
   line-height: 18px;
  }
  .card-image {
@@ -92,8 +94,7 @@ html {
   box-sizing: border-box;
   background-size: cover;
 }
-body {
-  padding-top: 60px; }
+ 
 
 section {
   overflow: auto; }
@@ -112,6 +113,8 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1; }
 
 /* header */
+
+  
 #logo {
   float: left;
 

@@ -15,8 +15,7 @@ import lombok.Data;
 public class UsersInv {
 	private int id;
 	private int itemid;
-	
-	
+ 
 	private User user;
 	private Integer userId;
 	

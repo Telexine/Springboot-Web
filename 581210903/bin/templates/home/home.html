@@ -5,10 +5,10 @@
 <head>
 <title>Home</title>
 </head>
-<body style="background:url('/images/bg.jpg')">
+<body style="background:url('/images/bg.jpg');  background-attachment: fixed">
 	<div layout:fragment="content" th:remove="tag">
 		<!-- StaticPages home.html inserted into main.html -->
-		<div class="main-layout">
+		<div class="main-layout" style="padding-top:80px;">
 			<div class="content-grid" >
 
 				<!-- Avatar -->
@@ -20,7 +20,7 @@
 					width: 10em;">
 					</div>
 				</div>
-					<div class="item-in-card nametag clearfloat" id="Name">
+					<div class="item-in-card nametag clearfloat" style="background-color:#F5F5F5"id="Name">
 						Tachid
 					</div>
 				</div>
@@ -48,6 +48,32 @@
 				<!-- Infos-->
 			</div>
 		
+
+
+<!-- Cards -->
+<div style="padding-top:0;background-color:#F5F5F5;" class="col-12 card">
+	 <div class="col-12 desc ">
+		 <span class="nametag" style="text-align:center;font-size:2em">Cards</span>
+	 </div>
+	 
+ 
+	<div style="background-color:white;" class="col-12 desc ">
+		 <!-- cards Item-->
+			<div style="background-color:beige; width:120px;height:200px">
+
+			</div>
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+			
 
 			<!-- Event -->
 			<span class="clearfloat"style="padding:30px"></span>

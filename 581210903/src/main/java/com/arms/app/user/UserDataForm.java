@@ -4,11 +4,13 @@ import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Data
-public class UserAddForm {
+public class UserDataForm {
 	@NotEmpty
-	private String name;
+	private String nickname;
 	@NotEmpty
-	private String email;
+	private String username;
 	@NotEmpty
 	private String password;
+	@NotEmpty
+	private String avatar;
 }
