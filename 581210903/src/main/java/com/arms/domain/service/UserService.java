@@ -25,7 +25,7 @@ public class UserService extends AppService {
 	User user = new User();
 	user.setNickname(userAddForm.getNickname());
 	user.setUsername(userAddForm.getUsername());
-	user.setAvartar(userAddForm.getAvatar()==null? "/images/defaultavatar.jpg" :userAddForm.getAvatar());
+	user.setAvartar(userAddForm.getAvartar()==null? "/images/defaultavatar.jpg" :userAddForm.getAvartar());
 	
 	
 	user.setPassword(passwordEncoder.hashMD5(userAddForm.getPassword()));
@@ -47,6 +47,7 @@ public class UserService extends AppService {
 		userEditForm.setUserid(user.getId());
 		userEditForm.setNickname(user.getNickname());
 		userEditForm.setUsername(user.getUsername());
+		userEditForm.setAvartar(user.getAvartar());
 		return userEditForm;
 		}
 	public void updateUser(UserEditForm userEditForm) throws NoSuchAlgorithmException {
@@ -54,6 +55,7 @@ public class UserService extends AppService {
 		User user = userRepository.findOne(userEditForm.getUserid());
 		user.setNickname(userEditForm.getNickname());
 		user.setPassword(passwordEncoder.hashMD5(userEditForm.getPassword()));
+		userEditForm.setAvartar(userEditForm.getAvartar());
 		user.setUpdated(nowDate);
 		userRepository.save(user);
 		}

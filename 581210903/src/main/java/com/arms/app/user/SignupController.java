@@ -21,25 +21,25 @@ public class SignupController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/user/signUp")
+	@RequestMapping("/user/register")
 	public ModelAndView signup(ModelAndView modelAndView){
-		modelAndView.setViewName("user/signup");
-		modelAndView.addObject("userAddForm", new UserDataForm());
+		modelAndView.setViewName("user/register");
+		modelAndView.addObject("UserDataForm", new UserDataForm());
 		return modelAndView;
 	}
 	
 	
 	@RequestMapping("/user/add")
-	public Object add(@ModelAttribute("userAddForm") @Valid UserDataForm userAddForm, BindingResult bindingResult,
+	public Object add(@ModelAttribute("UserDataForm") @Valid UserDataForm userAddForm, BindingResult bindingResult,
 
 			RedirectAttributes attributes, ModelAndView modelAndView) throws
 
 	NoSuchAlgorithmException {
 		if (bindingResult.hasErrors()) {
-			return "user/sign_up";
+			return "user/register";
 		}
 		userService.createUser(userAddForm);
 		attributes.addFlashAttribute("messageDialog", "User was created.");
-		return "redirect:/user/login";
+		return "redirect:/user/register";
 	}
 }

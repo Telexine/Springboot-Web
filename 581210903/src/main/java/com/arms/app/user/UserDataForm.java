@@ -12,5 +12,5 @@ public class UserDataForm {
 	@NotEmpty
 	private String password;
 	@NotEmpty
-	private String avatar;
+	private String avartar;
 }

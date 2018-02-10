@@ -31,18 +31,14 @@
 
 						<hr style="margin:auto"width="70%">
 						<br>
-						<div th:if="${isLogin}" >
-							 <a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-asterisk"></span> &nbsp Setting</a> 
-							 <a class="mdl-navigation__link" href="/user/logout" ><span class="glyphicon glyphicon-eject"></span> &nbsp Logout</a> 
-						</div>
-				 
-						<div th:unless="${isLogin}">
-							<a class="mdl-navigation__link"  href="/user/login"> <span class="glyphicon  glyphicon-lock"></span> &nbsp   Sign in</a> 
-						</div>
+						<span th:if="${isLogin}"><a class="mdl-navigation__link"  href="/user/login"> Sign in</a></span>
+						<span th:unless="${isLogin}"></span><a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-asterisk"></span> &nbsp Setting</a></span>
+						<span th:unless="${isLogin}"></span><a class="mdl-navigation__link" href="/user/logout" ><span class="glyphicon glyphicon-eject"></span> &nbsp Logout</a></span>
 					  </nav>
 					</div>
-					</div>
-				
+					<main class="mdl-layout__content">
+					</main>
+				  </div>
 
 
 

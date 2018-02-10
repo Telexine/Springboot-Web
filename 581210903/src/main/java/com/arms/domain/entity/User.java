@@ -43,8 +43,8 @@ public class User {
 	}
 	@Basic
 	@Column(name = "avartar")
-	public void setAvartar(String avatar) {
-		this.avartar=avatar ;
+	public void setAvartar(String avartar) {
+		this.avartar=avartar ;
 	}
 	
 	public void setNickname(String nickname) {

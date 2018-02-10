@@ -5,7 +5,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="layout/main"
 >
 <head>
-<title>Sign in</title>
+<title>log in</title>
 </head>
 <body style="background:url('/images/bg.jpg');">
 <div layout:fragment="content" th:remove="tag">
@@ -23,12 +23,15 @@ layout:decorator="layout/main"
                             <div th:if="${loginFail}" class="alert alert-danger alert-dismissible" th:utext="${resp}" role="alert">sss</div>
 						  <form th:action="@{/user/login}" method="post" role="form"  >
 							<input type="text" name="username" id="username" placeholder="Username" class="form-control txtfield">
-							<input type="password" name="password" id="password"  placeholder="Password"class="form-control txtfield">
+                            <input type="password" name="password" id="password"  placeholder="Password"class="form-control txtfield">
+                            <div style="color: #a94442" class="help-block" th:if="${param.error}" >
+                                    <span>Invalid username and password.</span>
+                                    </div>
 							<input type="submit" name="login" id="signin" style="width:100%" class="btn btn-primary btn-large" value="Login">
 						  </form>
 					 
 						  <div class="login-help">
-							<a href="#">Register</a>
+							<a th:href="@{/user/register}" >Register</a>
 						  </div>
 					</div>
 

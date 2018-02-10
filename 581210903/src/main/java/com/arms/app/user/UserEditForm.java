@@ -13,4 +13,6 @@ public class UserEditForm {
 	private String username;
 	@NotEmpty
 	private String password;
+ 
+	private String avartar;
 }

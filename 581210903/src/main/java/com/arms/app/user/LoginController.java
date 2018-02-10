@@ -9,12 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LoginController {
-	/*
-	@RequestMapping("/user/login")
-	public ModelAndView login(ModelAndView modelAndView) {
-		modelAndView.setViewName("user/login");
-		return modelAndView;
-	}*/
+ 
 	
 	@RequestMapping("/user/login")
 	public ModelAndView login(ModelAndView modelAndView) {
