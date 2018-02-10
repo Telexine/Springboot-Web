@@ -16,7 +16,7 @@ public class User {
 	private Date created;
 	private Date updated;
 	
-	public String avartar;
+	private String avartar;
 	
 	private List<UsersInv> userInvList;
 
@@ -94,7 +94,7 @@ public class User {
 	 
 	// Relation
 	
-	@OneToMany(mappedBy="user", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy="user", cascade = CascadeType.ALL)
 	public List<UsersInv> getuserInvList() {
 		return userInvList;
 	}

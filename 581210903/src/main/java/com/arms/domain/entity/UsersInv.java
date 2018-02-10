@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -14,8 +15,6 @@ import lombok.Data;
 @Data
 public class UsersInv {
 	private int id;
-	private int itemid;
- 
 	private User user;
 	private Integer userId;
 	
@@ -25,11 +24,17 @@ public class UsersInv {
 	return userId;
 	}
 	
-	@ManyToOne
+	@OneToOne
+	@JoinColumn(name = "id")
+	private Item itemid;
+	
+	@OneToOne
 	@JoinColumn(name = "user_id", insertable = false, updatable = false)
 	public User getUser() {
 		return user;
 	}
+	
+
 	
 	@Id
 	@GeneratedValue
@@ -59,13 +64,13 @@ public class UsersInv {
 	
 	@Basic
 	@Column(name = "itemid")
-	public int getItemid() {
+	public Item getItemid() {
 		return itemid;
 	}
  
 	@Basic
 	@Column(name = "itemid")
-	public void setItemid(int itemid) {
+	public void setItemid(Item itemid) {
 		this.itemid = itemid;
 	}
 	
