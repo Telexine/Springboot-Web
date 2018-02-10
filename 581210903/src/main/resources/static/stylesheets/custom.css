@@ -1,5 +1,6 @@
 body{
-  background-attachment: fixed
+  background-attachment: fixed;
+  
 }
 .main-layout{
 
@@ -14,9 +15,17 @@ body{
   padding: 0;
   display: flex;
 }
+.mdl-layout__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.mdl-layout__drawer{
+    position: fixed;
+}
 .card{
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 1;
   border-radius: 3px;
   margin:5px;
   font-size: 1em;
@@ -73,6 +82,44 @@ body{
 /*
  Responsive 
 */
+
+
+/*
+ Login
+*/
+ 
+.login-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+  position: fixed;
+  left: 0; 
+  right: 0; 
+    z-index: 400;
+}
+
+.login-container  .btn {
+  line-height: 55px;
+  padding: 0 30px;
+  background: #004a80;
+  color: #fff;
+  display: inline-block;
+ text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.login-container .txtfield{
+ border: 1px solid #d9d9d9;
+ width:100%;
+ }
+
 
 html {
   overflow-y: scroll;

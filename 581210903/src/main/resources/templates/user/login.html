@@ -10,6 +10,7 @@ layout:decorator="layout/main"
 <body>
 <div layout:fragment="content" th:remove="tag">
 <!-- Secure login.html inserted into main.html -->
+
 <div id="login">
 <h1>User Login</h1>
 <div th:if="${loginFail}" class="alert alert-danger alert-dismissible" role="alert">

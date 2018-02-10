@@ -9,20 +9,29 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LoginController {
+	/*
+	@RequestMapping("/user/login")
+	public ModelAndView login(ModelAndView modelAndView) {
+		modelAndView.setViewName("user/login");
+		return modelAndView;
+	}*/
+	
 	@RequestMapping("/user/login")
 	public ModelAndView login(ModelAndView modelAndView) {
 		modelAndView.setViewName("user/login");
 		return modelAndView;
 	}
-
+	
+ 
 	@RequestMapping(value = "/user/failLogin", method = RequestMethod.GET)
 	public ModelAndView failLogin(ModelAndView model) {
-		model.addObject("errorMsg", "Login failed, Invalid name and/or passwod");
+		model.addObject("resp", "<span class='glyphicon glyphicon-remove'></span> &nbsp Login failed, username or password were not found");
 		model.addObject("loginFail", true);
 		model.setViewName("user/login");
 		return model;
 	}
-
+ 
+ 
 	@RequestMapping(value = "/user/successLogin", method = RequestMethod.GET)
 	public Object successLogin(ModelAndView model, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		if (bindingResult.hasErrors()) {
