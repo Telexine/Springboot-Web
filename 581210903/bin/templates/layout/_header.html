@@ -31,9 +31,18 @@
 
 						<hr style="margin:auto"width="70%">
 						<br>
-						<span th:if="${isLogin}"><a class="mdl-navigation__link"  href="/user/login"> Sign in</a></span>
-						<span th:unless="${isLogin}"></span><a class="mdl-navigation__link" href=""><span class="glyphicon glyphicon-asterisk"></span> &nbsp Setting</a></span>
-						<span th:unless="${isLogin}"></span><a class="mdl-navigation__link" href="/user/logout" ><span class="glyphicon glyphicon-eject"></span> &nbsp Logout</a></span>
+						<span th:if="${isLogin}">
+								<a class="mdl-navigation__link" th:href="@{/user/editaccount}">
+									<span class="glyphicon glyphicon-asterisk" href=""></span> &nbsp Setting
+								</a>
+								
+								<a class="mdl-navigation__link" th:href="@{/user/logout}"><span class="glyphicon glyphicon-eject"></span> &nbsp Logout
+								</a> 
+							</span>
+						<span th:unless="${isLogin}">
+							<a class="mdl-navigation__link" th:href="@{/user/login}" ><span class="glyphicon glyphicon-lock"></span> &nbsp  Sign in</a>
+						</span>
+						
 					  </nav>
 					</div>
 					<main class="mdl-layout__content">

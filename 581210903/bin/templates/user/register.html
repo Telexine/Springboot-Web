@@ -37,7 +37,7 @@ error'">
 <input type="password" class="form-control txtfield" th:field="*{password}" placeholder="password"  />
 <span th:if="*{#fields.hasErrors('password')}" th:errors="*{password}" class="help-
 block">error!</span>
-<input type="text" class="form-control" th:field="*{avartar}" placeholder="avatarURL" /><br>          
+<input type="text" class="form-control" th:field="*{avartar}" placeholder="avatarURL || leave blank for defaut" /><br>          
 							<input type="submit" name="create" id="create" style="width:100%" class="btn btn-primary btn-large" value="Create User">
 						  </form>
 					 
