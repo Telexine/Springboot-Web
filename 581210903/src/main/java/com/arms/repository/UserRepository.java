@@ -7,4 +7,5 @@ import com.arms.domain.entity.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
 	User findOneByUsername(String Username);
+	User findAvatarById(int id);
 }

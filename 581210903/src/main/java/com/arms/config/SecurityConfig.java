@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/static/**", "/javascripts/**", "/images/**", "/**/favicon.ico", "/fonts/**",
 						"/stylesheets/**") .permitAll()// visible Path 
 				.and().authorizeRequests() // only logged user 
-				.antMatchers("/", "/user/login", "/user/register", "/user/add", "/help", "/contact", "/about","/loginuser").permitAll()
+				.antMatchers("/", "/user/login", "/user/register", "/user/editacc", "/user/add", "/help", "/contact", "/about","/loginuser").permitAll()
 				.anyRequest().authenticated().and().csrf().disable().formLogin().loginPage("/user/login")
 				.defaultSuccessUrl("/user/successLogin", true).failureUrl("/user/failLogin").usernameParameter("username") // login with User , password
 				.passwordParameter("password").permitAll().and().logout().logoutUrl("/user/logout")

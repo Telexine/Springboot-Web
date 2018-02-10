@@ -15,7 +15,8 @@ public class User {
 	private String password;
 	private Date created;
 	private Date updated;
-	private String avartar;
+	
+	public String avartar;
 	
 	private List<UsersInv> userInvList;
 

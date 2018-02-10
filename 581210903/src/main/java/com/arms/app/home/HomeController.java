@@ -30,7 +30,7 @@ public class HomeController {
 		Integer userId = homeService.getUserId(principal);
 		if (userId != null) {
 			modelAndView.addObject("userId", userId);
-
+			modelAndView.addObject("userImage", homeService.findAvatar(userId));
  
 		}
 		modelAndView.setViewName("home/home");

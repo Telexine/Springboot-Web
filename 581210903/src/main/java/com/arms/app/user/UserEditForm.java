@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class UserEditForm {
 	@NotNull
-	private Integer userid;
+	private Integer id;
 	@NotEmpty
 	private String nickname;
 	@NotEmpty

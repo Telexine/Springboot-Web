@@ -32,7 +32,7 @@
 						<hr style="margin:auto"width="70%">
 						<br>
 						<span th:if="${isLogin}">
-								<a class="mdl-navigation__link" th:href="@{/user/editaccount}">
+								<a class="mdl-navigation__link" th:href="@{/user/editaccount/} + ${loginUser.id}">
 									<span class="glyphicon glyphicon-asterisk" href=""></span> &nbsp Setting
 								</a>
 								

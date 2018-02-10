@@ -12,20 +12,23 @@
 		
 		<div class="main-layout" style="padding-top:80px;">
 			
- 
+			
+
+
 			<div th:if="${isLogin}" >
 				<div class="content-grid" >
 					<!-- Avatar -->
 					<div style="" class="col-2 card">
 						<div class="avatar" style="">
-							<div class="item-in-card" id="avatar" style="background-image: url(https://lh3.googleusercontent.com/-4Ax7IyNlR50/AAAAAAAAAAI/AAAAAAAAAAA/ACSILjUC49eHu6k8MT5r2UgTQZUkbRCqsQ/mo/photo.jpg);padding:24px;
+							<div class="item-in-card" id="avatar" th:style="'background-image: url('+  ${userImage}  +');padding:24px;
 							background-size: cover;border-radius:50%;
 							height: 10em;
-							width: 10em;">
+							width: 10em;'">
 							</div>
 						</div>
-						<div class="item-in-card nametag clearfloat" style="background-color:#F5F5F5"id="Name">
-								Tachid
+						<div th:if="${message!=null}" th:text="${message}">Info</div>
+						<div  class="item-in-card nametag clearfloat" style="background-color:#F5F5F5"id="Name">
+								<span th:text="${userInfo.username}">name</span>
 						</div>
 					</div>
 					<!-- Avatar -->

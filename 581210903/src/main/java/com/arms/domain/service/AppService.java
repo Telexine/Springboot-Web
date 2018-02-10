@@ -40,5 +40,9 @@ public class AppService {
 			return userRepository.findOneByUsername(userDetails.getUsername());
 		}
 	}
+	public String findAvatar(int id){
 
+		return userRepository.findAvatarById(id).getAvartar();
+
+		}
 }

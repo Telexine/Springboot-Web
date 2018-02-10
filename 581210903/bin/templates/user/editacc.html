@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout/main"
+>
+<head>
+<title>Edit Account</title>
+</head>
+<body style="background:url('/images/bg.jpg');">
+<div layout:fragment="content" th:remove="tag">
+<!-- Secure login.html inserted into main.html -->
+<main class="mdl-layout__content"style="width:100%">
+
+
+
+			<!-- Login -->
+			<div class="card" style="    padding: 5px 10% 10% 10%;margin: 10%;" >
+			
+					<div class="loginmodal-container">
+                            <h3>E D I T : A C C O U N T  </h3><br>
+                            <div class="avatar" style="">
+                                    <div class="item-in-card" id="avatar" th:style="'background-image: url('+  *{avartar}  +');padding:24px;
+                                    background-size: cover;border-radius:50%;
+                                    height: 10em;
+                                    width: 10em;'">
+                                    </div>
+                            <form th:action="@{/user/editaccount}" th:object="${userEditForm}" method="post"  role="form" name="form">
+                                <input type="hidden" th:field="*{id}" />
+                                Nickname
+                                <input type="text" class="form-control txtfield" th:field="*{nickname}" placeholder="edit nickname" />
+                            <span th:if="*{#fields.hasErrors('username')}" th:errors="*{username}" class="help-
+block">error!</span>
+                            <div class="form-group mt20 mb10" th:classappend="${#fields.hasErrors('username')}?
+                            'has-error'">
+                            Username
+                            <input type="text" class="form-control" th:field="*{username}" placeholder="edit username"  /> 
+                            <span th:if="*{#fields.hasErrors('username')}" th:errors="*{username}" class="help-
+block">error!</span>
+
+
+
+<div class="form-group mt20 mb10" th:classappend="${#fields.hasErrors('password')}? 'has-
+error'">
+Password
+<input type="password" class="form-control txtfield" th:field="*{password}"  placeholder="edit password" />
+<span th:if="*{#fields.hasErrors('password')}" th:errors="*{password}" class="help-
+block">error!</span>
+avatar URL
+<input type="text" class="form-control txtfield" th:field="*{avartar}" placeholder="edit avatar" />                  
+							<input type="submit" name="login" id="signin" style="width:100%" class="btn btn-primary btn-large" value="Edit">
+						  </form>
+					 
+					 
+					</div>
+
+				
+             </div>
+             
+			<!-- Login --> 
+</div>
+</main>
+</div>
+<!-- Secure login.html inserted into main.html -->
+</div>
+</body>
+</html>
+ 
+ 
+  

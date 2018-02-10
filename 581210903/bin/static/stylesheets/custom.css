@@ -85,9 +85,24 @@ body{
 
 
 /*
- Login
+ avartar
 */
  
+#avatar{
+  background-color: darkgray;
+ 
+  overflow: hidden;
+ 
+  *text-indent: -9999px;
+
+}
+#avatar:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
 .login-container {
   padding: 30px;
   max-width: 350px;

@@ -41,23 +41,23 @@ public class UserService extends AppService {
 	public User findOne(int userId) {
 		return userRepository.findOne(userId);
 		}
-	public UserEditForm setUserDataForm(int userId) {
+	public UserEditForm setUserEditForm(int userId) {
 		User user = userRepository.findOne(userId);
 		UserEditForm userEditForm = new UserEditForm();
-		userEditForm.setUserid(user.getId());
+		userEditForm.setId(user.getId());
 		userEditForm.setNickname(user.getNickname());
 		userEditForm.setUsername(user.getUsername());
 		userEditForm.setAvartar(user.getAvartar());
 		return userEditForm;
 		}
 	public void updateUser(UserEditForm userEditForm) throws NoSuchAlgorithmException {
-		Date nowDate = Calendar.getInstance().getTime();
-		User user = userRepository.findOne(userEditForm.getUserid());
-		user.setNickname(userEditForm.getNickname());
-		user.setPassword(passwordEncoder.hashMD5(userEditForm.getPassword()));
-		userEditForm.setAvartar(userEditForm.getAvartar());
-		user.setUpdated(nowDate);
-		userRepository.save(user);
+			Date nowDate = Calendar.getInstance().getTime();
+			User user = userRepository.findOne(userEditForm.getId());
+			user.setNickname(userEditForm.getNickname());
+			user.setPassword(passwordEncoder.hashMD5(userEditForm.getPassword()));
+			user.setAvartar(userEditForm.getAvartar());
+			user.setUpdated(nowDate);
+			userRepository.save(user);
 		}
 	public void deleteUser(int userId){
 		userRepository.delete(userId);
