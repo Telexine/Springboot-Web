@@ -5,91 +5,125 @@
 <head>
 <title>Home</title>
 </head>
-<body style="background:url('/images/bg.jpg')">
+<body style="background:url('/images/bg.jpg');  background-attachment: fixed">
 	<div layout:fragment="content" th:remove="tag">
 		<!-- StaticPages home.html inserted into main.html -->
-		<div class="main-layout">
-			<div class="content-grid" >
-
-				<!-- Avatar -->
-				<div style=" " class="col-2 card">
-				<div class="avatar" style="">
-					<div class="item-in-card" id="avatar" style="background-image: url(https://lh3.googleusercontent.com/-4Ax7IyNlR50/AAAAAAAAAAI/AAAAAAAAAAA/ACSILjUC49eHu6k8MT5r2UgTQZUkbRCqsQ/mo/photo.jpg);padding:24px;
-					background-size: cover;border-radius:50%;
-					height: 10em;
-					width: 10em;">
-					<div th:if="${loginFail}" class="alert alert-danger alert-dismissible" role="alert">
-					</div>
-				</div>
-					<div class="item-in-card nametag clearfloat" id="Name">
-						Tachid
-					</div>
-				</div>
-				<!-- Avatar -->
-
-				<!-- Infos-->
-				<div class="col-10 card">
-					<div class="item-in-card" style="padding: 40px;">
-						<div class="col-4"style="padding:20px;float:left" >
-							
-							<span id="p1"class="counter  clearfloat">12</span>
-							<span style="border-top: 1px solid rgba(0,0,0,0.1);"class="">Cards</span>
-						</div>
-						<div class="col-4 "style="padding:20px;float:left" >
-							<span id="p2"class="counter clearfloat">43</span>
-							<span style="border-top: 1px solid rgba(0,0,0,0.1);"class="">Essence</span>
-						</div>
-
-						<div class="col-4 "style="padding:20px;float:left" >
-							<span id="p3"class="counter clearfloat">0</span>
-							<span style="border-top: 1px solid rgba(0,0,0,0.1);"class="">Salt</span>
-						</div>
-					</div>
-				</div>
-				<!-- Infos-->
-			</div>
 		
-
-			<!-- Event -->
-			<span class="clearfloat"style="padding:30px"></span>
-			<div class ="card col-12 card-image">
-					<div class="   col-12">
-							<div class="  ">
-							  <h3 style="padding:30px"><a href="#">Final Events</a></h3>
-							</div>
-							 
-							<div class=""style="background-color:white">
-							  <div class="desc">
-								<b>Whale</b>
-							<div style="border-top: 1px solid rgba(0,0,0,0.1);">
-							<span >Duration : January 31, 18:00 ~ February 15, 2018 12:59 JST <br>
-																	Event Name: Valentine 2018 ~ Prosperous Chocolate Gardens of Valentine~<br>
-																	Requirements : Clear Fuyuki</span>
-							</div>
-							  </div>
-							  <div class="desc">
-								<strong>The Dev</strong>
-								<span>2 days ago</span>
-							  </div>
-							</div>
-						  </div>
-			</div>
-
-
+		
+		<div class="main-layout" style="padding-top:80px;">
 			
-			<!-- Content -->
-			<span class="clearfloat"></span>
-			<div class ="card col-12 card-image "style="background:url('');background-color: #263238;">
-					<div class="   col-12">
-							<div class="  ">
-							  <h3 style="padding:30px"><a href="#">Game</a></h3>
+			
+
+
+			<div th:if="${isLogin}" >
+				<div class="content-grid" >
+					<!-- Avatar -->
+					<div style="" class="col-2 card">
+						<div class="avatar" style="">
+							<div class="item-in-card" id="avatar" th:style="'background-image: url('+  ${userImage}  +');padding:24px;
+							background-size: cover;border-radius:50%;
+							height: 10em;
+							width: 10em;'">
 							</div>
-							 
-							  
-						  </div>
+						</div>
+						<div th:if="${message!=null}" th:text="${message}">Info</div>
+						<div  class="item-in-card nametag clearfloat" style="background-color:#F5F5F5"id="Name">
+								<span th:text="${userInfo.username}">name</span>
+						</div>
+					</div>
+					<!-- Avatar -->
+
+					<!-- Infos-->
+					<div class="col-10 card">
+						<div class="item-in-card" style="padding: 40px;">
+							<div class="col-4"style="padding:20px;float:left" >
+								<span id="p1"class="counter  clearfloat">12</span>
+								<span style="border-top: 1px solid rgba(0,0,0,0.1);"class="">Cards</span>
+							</div>
+							<div class="col-4 "style="padding:20px;float:left" >
+								<span id="p2"class="counter clearfloat">43</span>
+								<span style="border-top: 1px solid rgba(0,0,0,0.1);"class="">Essence</span>
+							</div>
+
+							<div class="col-4 "style="padding:20px;float:left" >
+								<span id="p3"class="counter clearfloat">0</span>
+								<span style="border-top: 1px solid rgba(0,0,0,0.1);"class="">Salt</span>
+							</div>
+						</div>
+					</div>
+					<!-- Infos-->
+				</div>
+			
+
+				<div class="content-grid" >
+
+					<!-- Cards -->
+					<div style="padding-top:0;background-color:#F5F5F5;" class="col-12 card">
+						<div class="col-12 desc ">
+							<span class="nametag" style="text-align:center;font-size:2em">Cards</span>
+						</div>
+						
+					
+						<div style="background-color:white;" class="col-12 desc ">
+							<!-- cards Item-->
+								<div style="background-color:beige; width:120px;height:200px">
+
+								</div>
+
+
+						</div>
+					</div>
+
+				</div>
 			</div>
 
 
+
+
+				
+
+				<!-- Event -->
+				<div class="content-grid" >
+					
+					<div class ="card col-12 card-image">
+							<div class=" col-12">
+									<div class="  ">
+									<h3 style="padding:30px"><a href="#">Final Events</a></h3>
+									</div>
+									
+									<div class=""style="background-color:white">
+									<div class="desc">
+										<b>Whale</b>
+									<div style="border-top: 1px solid rgba(0,0,0,0.1);">
+									<span >Duration : January 31, 18:00 ~ February 15, 2018 12:59 JST <br>
+																			Event Name: Valentine 2018 ~ Prosperous Chocolate Gardens of Valentine~<br>
+																			Requirements : Clear Fuyuki</span>
+									</div>
+									</div>
+									<div class="desc">
+										<strong>The Dev</strong>
+										<span>2 days ago</span>
+									</div>
+									</div>
+							</div>
+					</div>
+				</div>
+
+				
+				<!-- Content -->
+				<div th:if="${isLogin}" >
+					<div class="content-grid" >
+						<div class ="card col-12 card-image "style="background:url('');background-color: #263238;">
+								<div class="   col-12">
+										<div class="  ">
+											<h3 style="padding:30px"><a href="#">Game</a></h3>
+										</div>
+										
+										
+								</div>
+						</div>
+					</div>
+				</div>
 
 <!--  Login state
 		<div th:if="${isLogin}" class="row">

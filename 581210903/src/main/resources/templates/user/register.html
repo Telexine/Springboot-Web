@@ -20,13 +20,13 @@ layout:decorator="layout/main"
 					<div class="loginmodal-container">
                             <h3>R E G I S </h3><br>
                          
-                            <form th:action="@{/user/add}" th:object="${userDataForm}" method="post">
-                                <input type="text" class="form-control txtfield" th:field="*{nickname}" />
+                            <form th:action="@{/user/add}" th:object="${UserDataForm}" method="post">
+                                <input type="text" class="form-control txtfield" th:field="*{nickname}"  placeholder="Nickname"/>
                             <span th:if="*{#fields.hasErrors('username')}" th:errors="*{username}" class="help-
 block">error!</span>
                             <div class="form-group mt20 mb10" th:classappend="${#fields.hasErrors('username')}?
                             'has-error'">
-                            <input type="text" class="form-control" th:field="*{username}" /><br>
+                            <input type="text" class="form-control" th:field="*{username}"  placeholder="Username"/><br>
                             <span th:if="*{#fields.hasErrors('username')}" th:errors="*{username}" class="help-
 block">error!</span>
 
@@ -34,11 +34,11 @@ block">error!</span>
 
 <div class="form-group mt20 mb10" th:classappend="${#fields.hasErrors('password')}? 'has-
 error'">
-<input type="password" class="form-control txtfield" th:field="*{password}" />
+<input type="password" class="form-control txtfield" th:field="*{password}" placeholder="password"  />
 <span th:if="*{#fields.hasErrors('password')}" th:errors="*{password}" class="help-
 block">error!</span>
-                            
-							<input type="submit" name="login" id="signin" style="width:100%" class="btn btn-primary btn-large" value="Create User">
+<input type="text" class="form-control" th:field="*{avartar}" placeholder="avatarURL || leave blank for defaut" /><br>          
+							<input type="submit" name="create" id="create" style="width:100%" class="btn btn-primary btn-large" value="Create User">
 						  </form>
 					 
 					 
